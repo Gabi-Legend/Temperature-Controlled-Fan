@@ -1,36 +1,44 @@
-Temperature Controlled Fan
+# Temperature Controlled Fan
 
-A simple Arduino project that automatically turns a fan on when the temperature drops below a set threshold.
+A simple Arduino project that automatically turns a fan on or off depending on the temperature.
+
 ---
-Components
 
-Arduino board
+## Overview
 
-L298N motor driver
+This project uses an Arduino, a temperature sensor, and an L298N motor driver to control a DC fan.
+When the temperature drops below a defined threshold, the fan starts automatically.
 
-DC motor (fan)
-
-Temperature sensor (e.g., LM35 or DHT11)
-
-Jumper wires
-
-External power supply for the motor
 ---
-How it Works
 
-The Arduino reads the temperature from the sensor.
-If the temperature goes below a defined value, the Arduino activates the motor driver and starts the fan.
+## Components
+
+* Arduino board
+* L298N motor driver
+* DC motor / fan
+* Temperature sensor (LM35, DHT11, etc.)
+* Jumper wires
+* External power supply
+
 ---
-Connections
 
-Temperature sensor connected to an Arduino input pin
+## How It Works
 
-L298N IN1 and IN2 connected to Arduino digital pins
+The Arduino reads the temperature from the sensor continuously.
+If the temperature goes below a predefined value, the Arduino activates the motor driver and starts the fan.
 
-Fan connected to the motor driver outputs
-
-External power supply connected to the L298N
 ---
-Usage
 
-Upload the Arduino code, power the circuit, and the fan will automatically start when the temperature condition is met.
+## Setup
+
+1. Connect the temperature sensor to the Arduino.
+2. Connect the L298N input pins to Arduino digital pins.
+3. Connect the fan to the motor driver outputs.
+4. Provide external power to the motor driver.
+5. Upload the code to the Arduino.
+
+---
+
+## License
+
+Free to use for educational purposes.
