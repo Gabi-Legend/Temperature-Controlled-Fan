@@ -1,21 +1,21 @@
-int d1 = 5;
-int temp_sensor = A0;
-
-void setup() {
-  pinMode(d1, OUTPUT);
-  Serial.begin(9600);
-}
+bool fanState = false;
 
 void loop() {
 
-  int value = analogRead(temp_sensor);
-  Serial.println(value);
+  int value = analogRead(tempSensor);
 
-  if (value > 60) {
-    digitalWrite(d1, HIGH);
-  } else {
-    digitalWrite(d1, LOW);
+  float temperature =
+      (value * 5.0 * 100.0) / 1024.0;
+
+  if (temperature > 30) {
+    fanState = true;
   }
+
+  if (temperature < 27) {
+    fanState = false;
+  }
+
+  digitalWrite(fanPin, fanState);
 
   delay(500);
 }
